@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
+import MyApp from './Paypay';
 
-function CartTotals({value}) {
+function CartTotals({value,history }) {
     const { cartSubTotal, cartTax, cartTotal, clearCart} = value;
     return (
         <React.Fragment>
@@ -30,6 +31,11 @@ function CartTotals({value}) {
                                 total :</span>
                             <strong>$ {cartTotal}</strong>
                         </h5>
+                        <MyApp 
+                        total={cartTotal}
+                        clearCart={clearCart}
+                        history={history}
+                        />
                     </div>
                 </div>
             </div>
