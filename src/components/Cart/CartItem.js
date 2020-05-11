@@ -3,6 +3,7 @@ import CartColumns from './CartColumns';
 
 export default function CartItem({item, value}) {
     const { id, title, img, price,total, count } = item;
+    const { decrement, increment, removeItem } = value;
     return (
         <div className="row my-1 text-capitalize text-center">
             <div className="col-10 mx-auto col-lg-2">
@@ -21,8 +22,18 @@ export default function CartItem({item, value}) {
             </div>
             <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
                 <div className="d-flex justify-content-center">
-                    
+                    <span className="btn btn-black mx-1" onClick = {() => { return decrement(id) }}>-</span>
+                    <span className="btn btn-black mx-1">{count}</span>
+                    <span className="btn btn-black mx-1" onClick = {() => { return increment(id) }}>+</span>
                 </div>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <div className="cart-icon" onClick = {() => removeItem(id)}>
+                    <i className="fa fa-trash"/>
+                </div>
+            </div>
+            <div className="col-10 mx-auto col-lg-2">
+                <strong> item total : $ {total}</strong>
             </div>
         </div>
     )

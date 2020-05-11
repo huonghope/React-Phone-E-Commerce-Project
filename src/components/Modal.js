@@ -9,7 +9,6 @@ export default class Modal extends Component {
     static propTypes = {
         prop: PropTypes
     }
-
     render() {
         return (
             <ProductConsumer>
@@ -23,7 +22,7 @@ export default class Modal extends Component {
                     }else{
                         return (
                         <ModalContainer>
-                            <div className="container">vvvvv
+                            <div className="container">
                                 <div className="row">
                                     <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize">
                                         <h5>item add to the cart</h5>
