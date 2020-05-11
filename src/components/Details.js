@@ -8,7 +8,6 @@ export default class Details extends Component {
 		prop: PropTypes
 	}
 	render() {
-
 		return (
 			<ProductConsumer>
 				{value => {
